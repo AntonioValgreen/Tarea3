@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+v<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@ if (isset($_REQUEST["id"])){
 
     //hacemos un query para obtener el registro con el id seleccionado, que es el que se quiere editar
 
-    $sql = "select * from juanf_directorio where idDirectorio =".$id;
+    $sql = "select * from tonio_directorio where idDirectorio =".$id;
     $rs = ejecutar($sql);
     $datos = mysqli_fetch_array($rs);
 ?>

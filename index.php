@@ -41,13 +41,13 @@ include "conexion.php";
         $letraParaBuscar = $_REQUEST["letra"];
 
         //buscamos los apellidos que inician con la letra seleccionada
-        $sql = "select idDirectorio, nombre, apellido from juanf_directorio where apellido like '".$letraParaBuscar."%' order by apellido";
+        $sql = "select idDirectorio, nombre, apellido from tonio_directorio where apellido like '".$letraParaBuscar."%' and activo = 1 order by apellido";
         $rs = ejecutar($sql);
 
     }else if (isset($_POST["busqueda"])){
         $registroParaBuscar = $_POST["busqueda"];
 
-        $sql = "select idDirectorio, nombre, apellido from juanf_directorio where apellido like '%".$registroParaBuscar."%' order by apellido";
+        $sql = "select idDirectorio, nombre, apellido from tonio_directorio where apellido like '%".$registroParaBuscar."%' and activo = 1 order by apellido";
         $rs = ejecutar($sql);
     }
 ?>
@@ -88,7 +88,7 @@ include "conexion.php";
 
         }else if (isset($_REQUEST["id"])){
             $id = $_REQUEST["id"];
-            $sql = "select * from juanf_directorio where idDirectorio =".$id;
+            $sql = "select * from tonio_directorio where idDirectorio and activo = 1 =".$id;
             $rs = ejecutar($sql);
             $registro = mysqli_fetch_array($rs);
             
@@ -202,10 +202,9 @@ include "conexion.php";
 
 
         </div>
-        </form>
+            </form></form>
     </div>
-</div>
-
+    </div>
 
  
 </body>

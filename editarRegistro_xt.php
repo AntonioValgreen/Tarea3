@@ -20,7 +20,7 @@ if (isset($_POST["id"])){
     //hacemos un query de update para actulizar el registro
     include "conexion.php";
 
-    $sql = "update juanf_directorio set nombre='$nombre', apellido='$apellido', empresa='$empresa', email='$email', telefono='$telefono', comentarios='$comentarios' where idDirectorio = ".$id;
+    $sql = "update tonio_directorio set nombre='$nombre', apellido='$apellido', empresa='$empresa', email='$email', telefono='$telefono', comentarios='$comentarios' where idDirectorio = ".$id;
 
     $nada = ejecutar($sql);
 

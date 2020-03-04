@@ -9,9 +9,13 @@
     <?php
     if (isset($_REQUEST["id"])){
         $id = $_REQUEST["id"];
-
+        $activo = $_REQUEST["activo"];
+        
+        
+        
         include "conexion.php";
-        $sql = "delete from juanf_directorio where idDirectorio =".$id;
+        //TAREA 4, METER UN "UPDATE"
+        $sql = "UPDATE tonio_directorio set activo=0 where idDirectorio =".$id;
         $nada = ejecutar($sql);
 
         echo "<script language='javascript'>";
